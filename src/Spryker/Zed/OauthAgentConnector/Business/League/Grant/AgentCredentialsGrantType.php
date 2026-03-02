@@ -40,13 +40,6 @@ class AgentCredentialsGrantType extends AbstractGrant implements GrantTypeInterf
      */
     protected $userRepository;
 
-    /**
-     * @param \Psr\Http\Message\ServerRequestInterface $request
-     * @param \League\OAuth2\Server\ResponseTypes\ResponseTypeInterface $responseType
-     * @param \DateInterval $accessTokenTTL
-     *
-     * @return \League\OAuth2\Server\ResponseTypes\ResponseTypeInterface
-     */
     public function respondToAccessTokenRequest(
         ServerRequestInterface $request,
         ResponseTypeInterface $responseType,
@@ -75,9 +68,6 @@ class AgentCredentialsGrantType extends AbstractGrant implements GrantTypeInterf
         return $responseType;
     }
 
-    /**
-     * @return string
-     */
     public function getIdentifier(): string
     {
         return OauthAgentConnectorConfig::GRANT_TYPE_AGENT_CREDENTIALS;
@@ -114,12 +104,6 @@ class AgentCredentialsGrantType extends AbstractGrant implements GrantTypeInterf
         return $user;
     }
 
-    /**
-     * @param string $requestEvent
-     * @param \Psr\Http\Message\ServerRequestInterface $request
-     *
-     * @return \League\OAuth2\Server\RequestEvent
-     */
     protected function createRequestEvent(string $requestEvent, ServerRequestInterface $request): RequestEvent
     {
         return new RequestEvent($requestEvent, $request);

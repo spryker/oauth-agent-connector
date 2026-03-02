@@ -38,11 +38,6 @@ class AgentOauthUserProvider implements AgentOauthUserProviderInterface
      */
     protected $passwordEncoderAdapter;
 
-    /**
-     * @param \Spryker\Zed\OauthAgentConnector\Dependency\Facade\OauthAgentConnectorToAgentFacadeInterface $agentFacade
-     * @param \Spryker\Zed\OauthAgentConnector\Dependency\Service\OauthAgentConnectorToUtilEncodingServiceInterface $utilEncodingService
-     * @param \Spryker\Zed\OauthAgentConnector\Business\Adapter\PasswordEncoderAdapterInterface $passwordEncoderAdapter
-     */
     public function __construct(
         OauthAgentConnectorToAgentFacadeInterface $agentFacade,
         OauthAgentConnectorToUtilEncodingServiceInterface $utilEncodingService,
@@ -53,11 +48,6 @@ class AgentOauthUserProvider implements AgentOauthUserProviderInterface
         $this->passwordEncoderAdapter = $passwordEncoderAdapter;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OauthUserTransfer $oauthUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthUserTransfer
-     */
     public function getAgentOauthUser(OauthUserTransfer $oauthUserTransfer): OauthUserTransfer
     {
         $oauthUserTransfer->setIsSuccess(false);
@@ -87,11 +77,6 @@ class AgentOauthUserProvider implements AgentOauthUserProviderInterface
         return $oauthUserTransfer;
     }
 
-    /**
-     * @param string $username
-     *
-     * @return \Generated\Shared\Transfer\UserTransfer|null
-     */
     protected function findActiveAgentByUsername(string $username): ?UserTransfer
     {
         $findAgentResponseTransfer = $this->agentFacade->findAgentByUsername($username);

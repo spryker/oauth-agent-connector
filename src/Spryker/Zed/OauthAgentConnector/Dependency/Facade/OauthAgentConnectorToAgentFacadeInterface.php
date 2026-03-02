@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\FindAgentResponseTransfer;
 
 interface OauthAgentConnectorToAgentFacadeInterface
 {
-    /**
-     * @param string $username
-     *
-     * @return \Generated\Shared\Transfer\FindAgentResponseTransfer
-     */
     public function findAgentByUsername(string $username): FindAgentResponseTransfer;
 }

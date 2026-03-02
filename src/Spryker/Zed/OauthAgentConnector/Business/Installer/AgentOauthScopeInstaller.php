@@ -23,10 +23,6 @@ class AgentOauthScopeInstaller implements AgentOauthScopeInstallerInterface
      */
     protected $oauthAgentConnectorConfig;
 
-    /**
-     * @param \Spryker\Zed\OauthAgentConnector\Dependency\Facade\OauthAgentConnectorToOauthFacadeInterface $oauthFacade
-     * @param \Spryker\Zed\OauthAgentConnector\OauthAgentConnectorConfig $oauthAgentConnectorConfig
-     */
     public function __construct(
         OauthAgentConnectorToOauthFacadeInterface $oauthFacade,
         OauthAgentConnectorConfig $oauthAgentConnectorConfig
@@ -35,9 +31,6 @@ class AgentOauthScopeInstaller implements AgentOauthScopeInstallerInterface
         $this->oauthAgentConnectorConfig = $oauthAgentConnectorConfig;
     }
 
-    /**
-     * @return void
-     */
     public function install(): void
     {
         $agentScopes = $this->oauthAgentConnectorConfig->getAgentScopes();

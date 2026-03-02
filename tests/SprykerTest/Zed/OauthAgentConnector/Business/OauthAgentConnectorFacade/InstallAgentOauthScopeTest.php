@@ -29,9 +29,6 @@ class InstallAgentOauthScopeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testInstallAgentOauthScopeWillInitAgentScopes(): void
     {
         // Arrange

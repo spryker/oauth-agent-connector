@@ -24,11 +24,6 @@ class OauthAgentConnectorToOauthFacadeBridge implements OauthAgentConnectorToOau
         $this->oauthFacade = $oauthFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OauthScopeTransfer $oauthScopeTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthScopeTransfer
-     */
     public function saveScope(OauthScopeTransfer $oauthScopeTransfer): OauthScopeTransfer
     {
         return $this->oauthFacade->saveScope($oauthScopeTransfer);

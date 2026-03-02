@@ -18,9 +18,6 @@ class AgentScopeProvider implements AgentScopeProviderInterface
      */
     protected $oauthAgentConnectorConfig;
 
-    /**
-     * @param \Spryker\Zed\OauthAgentConnector\OauthAgentConnectorConfig $oauthAgentConnectorConfig
-     */
     public function __construct(OauthAgentConnectorConfig $oauthAgentConnectorConfig)
     {
         $this->oauthAgentConnectorConfig = $oauthAgentConnectorConfig;

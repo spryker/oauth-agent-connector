@@ -29,9 +29,6 @@ class GetScopesTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testGetScopesWillReturnScopes(): void
     {
         // Arrange
@@ -44,9 +41,6 @@ class GetScopesTest extends Unit
         $this->assertNotEmpty($oauthScopeTransfers, 'Agent scopes are not empty.');
     }
 
-    /**
-     * @return void
-     */
     public function testGetScopesWillReturnScopesWithDefault(): void
     {
         // Arrange

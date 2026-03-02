@@ -20,13 +20,6 @@ class PasswordEncoderAdapter implements PasswordEncoderAdapterInterface
      */
     protected const BCRYPT_FACTOR = 12;
 
-    /**
-     * @param string $encoded
-     * @param string $raw
-     * @param string|null $salt
-     *
-     * @return bool
-     */
     public function isPasswordValid(string $encoded, string $raw, ?string $salt = null): bool
     {
         if ($this->isSymfonyVersion5() === true) {
@@ -36,17 +29,11 @@ class PasswordEncoderAdapter implements PasswordEncoderAdapterInterface
         return $this->createPasswordHasher()->verify($encoded, $raw);
     }
 
-    /**
-     * @return \Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface
-     */
     protected function getPasswordEncoder(): PasswordEncoderInterface
     {
         return new NativePasswordEncoder();
     }
 
-    /**
-     * @return \Symfony\Component\PasswordHasher\PasswordHasherInterface
-     */
     public function createPasswordHasher(): PasswordHasherInterface
     {
         return new NativePasswordHasher();

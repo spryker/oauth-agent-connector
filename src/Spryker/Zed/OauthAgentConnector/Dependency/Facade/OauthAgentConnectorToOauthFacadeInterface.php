@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\OauthScopeTransfer;
 
 interface OauthAgentConnectorToOauthFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OauthScopeTransfer $oauthScopeTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthScopeTransfer
-     */
     public function saveScope(OauthScopeTransfer $oauthScopeTransfer): OauthScopeTransfer;
 
     /**

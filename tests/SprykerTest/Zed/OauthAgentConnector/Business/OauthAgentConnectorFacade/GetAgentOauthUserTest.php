@@ -39,9 +39,6 @@ class GetAgentOauthUserTest extends Unit
      */
     protected $userTransfer;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -60,9 +57,6 @@ class GetAgentOauthUserTest extends Unit
             ->createUser($userTransfer);
     }
 
-    /**
-     * @return void
-     */
     protected function tearDown(): void
     {
         $this->tester
@@ -72,9 +66,6 @@ class GetAgentOauthUserTest extends Unit
         parent::tearDown();
     }
 
-    /**
-     * @return void
-     */
     public function testGetAgentOauthUserWillAuthorizeAnAgent(): void
     {
         // Arrange
@@ -89,9 +80,6 @@ class GetAgentOauthUserTest extends Unit
         $this->assertTrue($resultingOauthUserTransfer->getIsSuccess(), 'Agent user should be authorized with valid credentials.');
     }
 
-    /**
-     * @return void
-     */
     public function testGetAgentOauthUserWillNotAuthorizeAnAgentWithWrongCredentials(): void
     {
         // Arrange
@@ -106,9 +94,6 @@ class GetAgentOauthUserTest extends Unit
         $this->assertFalse($resultingOauthUserTransfer->getIsSuccess(), 'Agent should not be able to authorize with wrong credentials.');
     }
 
-    /**
-     * @return void
-     */
     public function testGetAgentOauthUserWillNotAuthorizeAnAgentWithInactiveStatus(): void
     {
         // Arrange

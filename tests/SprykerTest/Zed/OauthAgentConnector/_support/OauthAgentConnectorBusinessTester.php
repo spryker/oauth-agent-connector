@@ -29,9 +29,6 @@ class OauthAgentConnectorBusinessTester extends Actor
 {
     use _generated\OauthAgentConnectorBusinessTesterActions;
 
-    /**
-     * @return \Spryker\Zed\User\Business\UserFacadeInterface
-     */
     public function getUserFacade(): UserFacadeInterface
     {
         return $this->getLocator()->user()->facade();

@@ -9,12 +9,5 @@ namespace Spryker\Zed\OauthAgentConnector\Business\Adapter;
 
 interface PasswordEncoderAdapterInterface
 {
-    /**
-     * @param string $encoded
-     * @param string $raw
-     * @param string|null $salt
-     *
-     * @return bool
-     */
     public function isPasswordValid(string $encoded, string $raw, ?string $salt = null): bool;
 }

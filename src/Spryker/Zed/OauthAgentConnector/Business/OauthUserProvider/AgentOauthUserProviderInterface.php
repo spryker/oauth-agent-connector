@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\OauthUserTransfer;
 
 interface AgentOauthUserProviderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OauthUserTransfer $oauthUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthUserTransfer
-     */
     public function getAgentOauthUser(OauthUserTransfer $oauthUserTransfer): OauthUserTransfer;
 }

@@ -24,11 +24,6 @@ class OauthAgentConnectorToAgentFacadeBridge implements OauthAgentConnectorToAge
         $this->agentFacade = $agentFacade;
     }
 
-    /**
-     * @param string $username
-     *
-     * @return \Generated\Shared\Transfer\FindAgentResponseTransfer
-     */
     public function findAgentByUsername(string $username): FindAgentResponseTransfer
     {
         return $this->agentFacade->findAgentByUsername($username);

@@ -26,9 +26,6 @@ use Spryker\Zed\OauthAgentConnector\OauthAgentConnectorDependencyProvider;
  */
 class OauthAgentConnectorBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\OauthAgentConnector\Business\OauthUserProvider\AgentOauthUserProviderInterface
-     */
     public function createAgentOauthUserProvider(): AgentOauthUserProviderInterface
     {
         return new AgentOauthUserProvider(
@@ -38,17 +35,11 @@ class OauthAgentConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\OauthAgentConnector\Business\ScopeProvider\AgentScopeProviderInterface
-     */
     public function createAgentScopeProvider(): AgentScopeProviderInterface
     {
         return new AgentScopeProvider($this->getConfig());
     }
 
-    /**
-     * @return \Spryker\Zed\OauthAgentConnector\Business\Installer\AgentOauthScopeInstallerInterface
-     */
     public function createAgentOauthScopeInstaller(): AgentOauthScopeInstallerInterface
     {
         return new AgentOauthScopeInstaller(
@@ -57,33 +48,21 @@ class OauthAgentConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\OauthAgentConnector\Business\Adapter\PasswordEncoderAdapterInterface
-     */
     public function createPasswordEncoderAdapter(): PasswordEncoderAdapterInterface
     {
         return new PasswordEncoderAdapter();
     }
 
-    /**
-     * @return \Spryker\Zed\OauthAgentConnector\Dependency\Facade\OauthAgentConnectorToAgentFacadeInterface
-     */
     public function getAgentFacade(): OauthAgentConnectorToAgentFacadeInterface
     {
         return $this->getProvidedDependency(OauthAgentConnectorDependencyProvider::FACADE_AGENT);
     }
 
-    /**
-     * @return \Spryker\Zed\OauthAgentConnector\Dependency\Facade\OauthAgentConnectorToOauthFacadeInterface
-     */
     public function getOauthFacade(): OauthAgentConnectorToOauthFacadeInterface
     {
         return $this->getProvidedDependency(OauthAgentConnectorDependencyProvider::FACADE_OAUTH);
     }
 
-    /**
-     * @return \Spryker\Zed\OauthAgentConnector\Dependency\Service\OauthAgentConnectorToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): OauthAgentConnectorToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(OauthAgentConnectorDependencyProvider::SERVICE_UTIL_ENCODING);
