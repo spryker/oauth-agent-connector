@@ -17,6 +17,8 @@ class OauthAgentConnectorConfig extends AbstractBundleConfig
     protected const OAUTH_SCOPE_AGENT = 'agent';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const GRANT_TYPE_AGENT_CREDENTIALS = 'agent_credentials';
